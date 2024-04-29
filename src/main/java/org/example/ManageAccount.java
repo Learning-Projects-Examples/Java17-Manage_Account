@@ -39,6 +39,7 @@ public class ManageAccount implements Account<User> {
         return true;
     }
 
+
     @Override
     public boolean existsUser(String idUser) {
         return tmUsers.containsKey(idUser);

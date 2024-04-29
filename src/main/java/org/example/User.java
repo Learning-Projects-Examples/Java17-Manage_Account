@@ -30,8 +30,9 @@ public class User implements Comparable<User> {
     }
 
     public String[] getEmails() {
-        return emails.isEmpty() ? null : emails.toArray(new String[0]);
+        return emails.isEmpty() ? new String[0] : emails.toArray(new String[0]);
     }
+
 
     public void setEmails(Set<String> emails) {
         this.emails = emails;
@@ -84,6 +85,18 @@ public class User implements Comparable<User> {
 
     @Override
     public int compareTo(User other) {
+        if (this.name == null) {
+            // Se this.name è null, restituisco un valore negativo
+            return -1;
+        }
+
+        // Controllo se other.name è null
+        if (other.name == null) {
+            // Se other.name è null, restituisco un valore positivo
+            return 1;
+        }
+
+
         int nameResult = this.name.compareTo(other.name);
         if (nameResult != 0) {
             return nameResult;
@@ -100,12 +113,28 @@ public class User implements Comparable<User> {
         }
 
 
+        if (this.emails == null && other.emails == null) {
+            return 0;
+        }
+
+
+        if (this.emails == null) {
+            return -1;
+        }
+
+
+        if (other.emails == null) {
+            return 1;
+        }
+
+
         String[] thisEmails = this.getEmails();
         String[] otherEmails = other.getEmails();
         Arrays.sort(thisEmails);
         Arrays.sort(otherEmails);
         return Arrays.compare(thisEmails, otherEmails);
     }
+
 
 }
 

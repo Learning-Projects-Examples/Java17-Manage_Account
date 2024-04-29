@@ -84,7 +84,6 @@ class ManageAccountTest {
 
     @Test
     void testUserNull() {
-        Optional<User> actualUserOptionalNull = Optional.empty();
         assertFalse(false);
     }
 
@@ -145,6 +144,7 @@ class ManageAccountTest {
 
         expectedAscending[0].addEmail("alberto.gabbai@libero.it");
         expectedAscending[1].addEmail("carlo.navone@hotmail.com");
+        expectedAscending[1].addEmail("carlo.navone@libero.it");
         expectedAscending[4].addEmail("giorgio.poggi@google.com");
         expectedAscending[4].addEmail("giorgio.poggi@libero.it");
         expectedAscending[4].addEmail("giorgio.poggi@spformazione.com");
@@ -172,6 +172,7 @@ class ManageAccountTest {
 
         expectedAscendingWithAdd[0].addEmail("alberto.gabbai@libero.it");
         expectedAscendingWithAdd[2].addEmail("carlo.navone@hotmail.com");
+        expectedAscendingWithAdd[2].addEmail("carlo.navone@libero.it");
         expectedAscendingWithAdd[3].addEmail("ezio@prova.com");
         expectedAscendingWithAdd[6].addEmail("giorgio.poggi@google.com");
         expectedAscendingWithAdd[6].addEmail("giorgio.poggi@libero.it");
@@ -195,6 +196,7 @@ class ManageAccountTest {
         expectedDescending[0].addEmail("giorgio.poggi@libero.it");
         expectedDescending[0].addEmail("giorgio.poggi@google.com");
         expectedDescending[3].addEmail("carlo.navone@hotmail.com");
+        expectedDescending[3].addEmail("carlo.navone@libero.it");
         expectedDescending[4].addEmail("alberto.gabbai@libero.it");
 
         User[] actualDescending = ma.users(EnumSortType.SORT_DESCENDING);
@@ -222,6 +224,7 @@ class ManageAccountTest {
 
         expectedDescendingWithAdd[7].addEmail("alberto.gabbai@libero.it");
         expectedDescendingWithAdd[5].addEmail("carlo.navone@hotmail.com");
+        expectedDescendingWithAdd[5].addEmail("carlo.navone@libero.it");
         expectedDescendingWithAdd[4].addEmail("ezio@prova.com");
         expectedDescendingWithAdd[1].addEmail("giorgio.poggi@google.com");
         expectedDescendingWithAdd[1].addEmail("giorgio.poggi@libero.it");
@@ -302,6 +305,7 @@ class ManageAccountTest {
         };
         expectedFirstUsers[0].addEmail("alberto.gabbai@libero.it");
         expectedFirstUsers[1].addEmail("carlo.navone@hotmail.com");
+        expectedFirstUsers[1].addEmail("carlo.navone@libero.it");
 
         User[] actualFirstUsers = ma.firstUsers(2);
 
@@ -325,6 +329,7 @@ class ManageAccountTest {
 
         expectedFirstUsersWithAdd[0].addEmail("alberto.gabbai@libero.it");
         expectedFirstUsersWithAdd[3].addEmail("carlo.navone@hotmail.com");
+        expectedFirstUsersWithAdd[3].addEmail("carlo.navone@libero.it");
 
         User[] actualFirstUsersWithAdd = ma.firstUsers(5);
 
@@ -378,6 +383,7 @@ class ManageAccountTest {
 
         expectedWithTooBigNum[0].addEmail("alberto.gabbai@libero.it");
         expectedWithTooBigNum[1].addEmail("carlo.navone@hotmail.com");
+        expectedWithTooBigNum[1].addEmail("carlo.navone@libero.it");
         expectedWithTooBigNum[4].addEmail("giorgio.poggi@google.com");
         expectedWithTooBigNum[4].addEmail("giorgio.poggi@libero.it");
         expectedWithTooBigNum[4].addEmail("giorgio.poggi@spformazione.com");
